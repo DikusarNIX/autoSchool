@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class ReferenceTypes {
     public static void main(String[] args) {
         task1();
-        task2();
-        task3();
+        //task2();
+        //task3();
     }
 
     /*1. Дана строка. Вывести первый, последний и средний (если он есть) символы.
@@ -17,7 +17,10 @@ public class ReferenceTypes {
         scan.close();
 
         System.out.println("First character: " + line.charAt(0));
-        System.out.println("Middle character: " + line.charAt(line.length() / 2));
+        if(line.length()%2 == 0)
+            System.out.println("The middle character is missing.");
+        else
+            System.out.println("Middle character: " + line.charAt(line.length() / 2));
         System.out.println("Last character: " + line.substring(line.length() - 1));
 
         int firstDot = line.indexOf('.');
