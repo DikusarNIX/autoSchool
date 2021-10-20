@@ -4,7 +4,7 @@ public class ConversionTypes {
         task1(21, 8);
         task2(48);
         task3(22.15);
-        task4(3, 6, 2);
+        task4(0, 2, 5);
     }
 
     /*1. В переменных q и w хранятся два натуральных числа.
@@ -38,12 +38,9 @@ public class ConversionTypes {
     в b хранилась разность старых значений c−a, а в c хранилось сумма старых значений a+b+c.
     Например, a=0, b=2, c=5, тогда новые значения a=2, b=5 и c=7. */
     public static void task4(int a, int b, int c) {
-        int i = a;
-        int j = b;
-        int k = c;
-        a = i + j;
-        b = k - i;
-        c = i + j + k;
+        a = a + b; //old value - a-b
+        c = c + (a - b) + b; // = c+a, so old value c-a
+        b = (c - a) - (a - b);
         System.out.println("a=" + a + ", b=" + b + ", c=" + c);
     }
 }
