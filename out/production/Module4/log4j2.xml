@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration package="logTask">
+
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %5p %t %-5l - %m%n"/>
+        </Console>
+
+        <RollingFile name="RollingFile" fileName="target/log-output.log" filePattern="target/log-output-$${date:yyyy-MM}/log-output-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %5level %class:%L - %m%n"/>
+            <SizeBasedTriggeringPolicy size="5 MB" />
+        </RollingFile>
+    </appenders>
+    <loggers>
+        <root level="trace">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingFile"/>
+        </root>
+    </loggers>
+
+</configuration>
